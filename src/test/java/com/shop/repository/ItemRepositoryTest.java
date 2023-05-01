@@ -30,7 +30,7 @@ class ItemRepositoryTest {
 
     @Autowired
     ItemRepository itemRepository;
-    
+
     @PersistenceContext
     EntityManager em;
 
@@ -74,7 +74,7 @@ class ItemRepositoryTest {
             System.out.println("item.toString() = " + item.toString());
         }
     }
-    
+
     @Test
     @DisplayName("상품명, 상품상세설명 or 테스트")
     public void findByItemNmOrItemDetailTest(){
@@ -84,7 +84,7 @@ class ItemRepositoryTest {
             System.out.println("item.toString() = " + item.toString());
         }
     }
-    
+
     @Test
     @DisplayName("가격 LessThan 테스트")
     public void findByPriceLessThanTest(){
@@ -94,7 +94,7 @@ class ItemRepositoryTest {
             System.out.println("item.toString() = " + item.toString());
         }
     }
-    
+
     @Test
     @DisplayName("가격 내림차순 조회 테스트")
     public void findByPriceLessThanOrderByPriceDesc(){
@@ -114,7 +114,7 @@ class ItemRepositoryTest {
             System.out.println("item.toString() = " + item.toString());
         }
     }
-    
+
     @Test
     @DisplayName("nativeQuery 속성을 이용한 상품 조회 테스트")
     public void findByItemDetailByNative(){
@@ -124,7 +124,7 @@ class ItemRepositoryTest {
             System.out.println("item.toString() = " + item.toString());
         }
     }
-    
+
     @Test
     @DisplayName("Querydsl 조회 테스트1")
     public void queryDslTest(){
@@ -142,7 +142,7 @@ class ItemRepositoryTest {
         //Long fetchCount() - 조회 대상 개수 반환
         //QueryResult<T> fetchResults() - 조회한 리스트와 전체 개수를 포함한 QueryResults 반텟
         List<Item> itemList = query.fetch();
-        
+
         for(Item item : itemList){
             System.out.println("item.toString() = " + item.toString());
         }
